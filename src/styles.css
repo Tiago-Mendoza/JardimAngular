@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-sage: #8B9A8C;        
+    --primary-sage-dark: #6B7A6C;  
+    --primary-sage-light: #A8B5A9;  
+    --accent-rose: #D4A574;          
+    --accent-rose-light: #E8C4A0;    
+    --accent-gold: #C9A96E;          
+    --neutral-cream: #FAF8F5;       
+    --neutral-warm: #F5F2EE;         
+    --neutral-soft: #E8E4DF;         
+    --text-primary: #2C3E2D;         
+    --text-secondary: #5A6B5B;       
+    --text-light: #8A9B8B;           
+    --white-soft: #FEFEFE;          
+    --shadow-soft: rgba(139, 154, 140, 0.15);
+    --shadow-medium: rgba(139, 154, 140, 0.25);
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.7;
+    background: linear-gradient(135deg, var(--neutral-cream) 0%, var(--neutral-warm) 100%);
+    color: var(--text-primary);
+    font-weight: 400;
+}

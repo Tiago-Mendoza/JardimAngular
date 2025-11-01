@@ -1,0 +1,23 @@
+<header class="main-header">
+    <nav class="navbar-elegant">
+        <a routerLink="/buques" class="nav-branding-elegant">Jardim Encantado</a>
+        <ul class="nav-menu-elegant">
+            <li class="nav-item-elegant"><a routerLink="/buques" class="nav-link-elegant">Buquês</a></li>
+            <li class="nav-item-elegant"><a routerLink="/arranjos" class="nav-link-elegant">Arranjos</a></li>
+            <li class="nav-item-elegant"><a routerLink="/presentes" class="nav-link-elegant">Presentes</a></li>
+            <li class="nav-item-elegant"><a href="#contato-footer" class="nav-link-elegant">Contato</a></li>
+            <li class="nav-item-elegant"><a routerLink="/admin-login" class="nav-link-elegant">Login</a></li>
+            <li class="nav-item-elegant">
+                <a routerLink="/cart" class="nav-link-elegant">
+                    <i class="fa-solid fa-cart-shopping"></i> 
+                    <span id="cart-count">{{ cartCount() }}</span>
+                </a>
+            </li>
+        </ul>
+        <div class="hamburger-elegant">
+            <span class="bar-elegant"></span>
+            <span class="bar-elegant"></span>
+            <span class="bar-elegant"></span>
+        </div>
+    </nav>
+</header>

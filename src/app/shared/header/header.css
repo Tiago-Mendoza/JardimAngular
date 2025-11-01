@@ -1,0 +1,193 @@
+.main-header {
+    background: linear-gradient(135deg, var(--primary-sage) 0%, var(--primary-sage-dark) 100%);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-elegant {
+    min-height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-branding-elegant {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--white-soft);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: all 0.4s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-branding-elegant:hover {
+    color: var(--accent-rose-light);
+    transform: translateY(-2px);
+}
+
+.nav-menu-elegant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-item-elegant {
+    list-style: none;
+}
+
+.nav-link-elegant {
+    font-size: 1.1rem;
+    color: var(--white-soft);
+    text-decoration: none;
+    padding: 12px 0;
+    position: relative;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.nav-link-elegant::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    background: linear-gradient(90deg, var(--accent-rose) 0%, var(--accent-gold) 100%);
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.nav-link-elegant.active {
+    color: var(--accent-rose-light);
+}
+
+.nav-link-elegant.active::after {
+    width: 100%;
+}
+
+.nav-link-elegant:hover::after {
+    width: 100%;
+}
+
+.nav-link-elegant:hover {
+    color: var(--accent-rose-light);
+    transform: translateY(-2px);
+}
+
+.hamburger-elegant {
+    display: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger-elegant:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bar-elegant {
+    display: block;
+    width: 32px;
+    height: 3px;
+    margin: 7px auto;
+    background-color: var(--white-soft);
+    transition: all 0.4s ease-in-out;
+    border-radius: 3px;
+}
+
+.hamburger-elegant.active .bar-elegant:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-elegant.active .bar-elegant:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-elegant.active .bar-elegant:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+@media(max-width: 992px) {
+    .navbar-elegant {
+        padding: 0 30px;
+    }
+
+    .nav-branding-elegant {
+        font-size: 2.3rem;
+    }
+
+    .nav-menu-elegant {
+        gap: 35px;
+    }
+}
+
+@media(max-width: 768px) {
+    .hamburger-elegant {
+        display: block;
+    }
+
+    .nav-menu-elegant {
+        position: fixed;
+        left: -100%;
+        top: 85px;
+        gap: 0;
+        flex-direction: column;
+        background: linear-gradient(135deg, var(--primary-sage) 0%, var(--primary-sage-dark) 100%);
+        width: 100%;
+        text-align: center;
+        transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        padding: 30px 0;
+        box-shadow: 0 15px 35px var(--shadow-medium);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-item-elegant {
+        margin: 25px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu-elegant.active {
+        left: 0;
+    }
+
+    .nav-menu-elegant.active .nav-item-elegant {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-link-elegant {
+        font-size: 1.3rem;
+        padding: 15px 0;
+        display: block;
+    }
+
+    .nav-link-elegant::after {
+        background: linear-gradient(90deg, var(--accent-rose) 0%, var(--accent-gold) 100%);
+    }
+}
+
+@media(max-width: 480px) {
+    .navbar-elegant {
+        padding: 0 20px;
+    }
+
+    .nav-branding-elegant {
+        font-size: 2rem;
+    }
+}
+
