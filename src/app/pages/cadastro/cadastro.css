@@ -62,9 +62,15 @@
     background: #FEFEFE;
 }
 
-.esqueci-senha {
-    text-align: right;
-    margin-top: -10px;
+.link-cadastro {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.link-cadastro p {
+    color: #5A6B5B;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 .link-esqueci-senha {
@@ -77,17 +83,6 @@
 .link-esqueci-senha:hover {
     color: #C9A96E;
     text-decoration: underline;
-}
-
-.link-cadastro {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.link-cadastro p {
-    color: #5A6B5B;
-    font-size: 0.9rem;
-    margin: 0;
 }
 
 .botao-login {

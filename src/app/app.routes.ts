@@ -5,6 +5,8 @@ import { Arranjos } from './pages/arranjos/arranjos';
 import { Presentes } from './pages/presentes/presentes';
 import { Cart } from './pages/cart/cart';
 import { AdminLogin } from './pages/admin-login/admin-login';
+import { Cadastro } from './pages/cadastro/cadastro';
+import { Admin } from './pages/admin/admin';
 
 export const routes: Routes = [
   {
@@ -41,6 +43,16 @@ export const routes: Routes = [
     path: 'admin-login',
     component: AdminLogin,
     title: 'Login - Jardim Encantado'
+  },
+  {
+    path: 'cadastro',
+    component: Cadastro,
+    title: 'Cadastro - Jardim Encantado'
+  },
+  {
+    path: 'admin',
+    component: Admin,
+    title: 'Painel Administrativo - Jardim Encantado'
   },
   {
     path: '**',

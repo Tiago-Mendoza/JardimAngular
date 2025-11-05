@@ -1,0 +1,73 @@
+<main>
+    <section class="secao-admin">
+        <div class="conteudo-admin">
+            <div class="cabecalho-admin">
+                <h1 class="titulo-admin">Painel Administrativo</h1>
+                <button class="botao-sair" (click)="sair()">Sair</button>
+            </div>
+
+            <div class="abas-admin">
+                <button class="aba" [class.ativa]="abaAtiva === 'buques'" (click)="mudarAba('buques')">Buquês</button>
+                <button class="aba" [class.ativa]="abaAtiva === 'arranjos'" (click)="mudarAba('arranjos')">Arranjos</button>
+                <button class="aba" [class.ativa]="abaAtiva === 'presentes'" (click)="mudarAba('presentes')">Presentes</button>
+            </div>
+
+            <div class="area-crud">
+                <div class="formulario-adicionar">
+                    <h2>Adicionar Novo Produto</h2>
+                    <form (ngSubmit)="adicionarProduto()">
+                        <div class="grupo-formulario">
+                            <label>Nome do Produto</label>
+                            <input type="text" [(ngModel)]="novoProduto.nome" name="nome" placeholder="Nome do produto" required>
+                        </div>
+                        <div class="grupo-formulario">
+                            <label>Preço</label>
+                            <input type="number" [(ngModel)]="novoProduto.preco" name="preco" placeholder="R$ 0,00" step="0.01" required>
+                        </div>
+                        <div class="grupo-formulario">
+                            <label>Descrição</label>
+                            <textarea [(ngModel)]="novoProduto.descricao" name="descricao" placeholder="Descrição do produto" rows="3"></textarea>
+                        </div>
+                        <div class="grupo-formulario">
+                            <label>Nome da Imagem</label>
+                            <input type="text" [(ngModel)]="novoProduto.nomeImagem" name="nomeImagem" 
+                                   [placeholder]="'Ex: buque-01.jpg (da pasta assets/img/' + abaAtiva + ')'" required>
+                            <small class="dica-imagem">
+                                💡 Digite só o nome do arquivo (ex: buque-01.jpg). 
+                                A imagem será buscada automaticamente de assets/img/{{abaAtiva}}/
+                            </small>
+                        </div>
+                        <button type="submit" class="botao-adicionar">Adicionar Produto</button>
+                    </form>
+                </div>
+
+                <div class="lista-produtos">
+                    <h2>Produtos Cadastrados ({{ produtos().length }})</h2>
+                    <div class="produtos-grid">
+                        @for (produto of produtos(); track produto.id) {
+                            <div class="card-produto">
+                                <div class="imagem-produto">
+                                    @if (produto.imagem) {
+                                        <img [src]="produto.imagem" [alt]="produto.nome">
+                                    } @else {
+                                        <div class="sem-imagem">Sem imagem</div>
+                                    }
+                                </div>
+                                <div class="info-produto">
+                                    <h3>{{ produto.nome }}</h3>
+                                    <p class="preco">R$ {{ produto.preco.toFixed(2) }}</p>
+                                    @if (produto.descricao) {
+                                        <p class="descricao">{{ produto.descricao }}</p>
+                                    }
+                                </div>
+                                <button class="botao-deletar" (click)="deletarProduto(produto.id)">Deletar</button>
+                            </div>
+                        } @empty {
+                            <p class="sem-produtos">Nenhum produto cadastrado ainda.</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

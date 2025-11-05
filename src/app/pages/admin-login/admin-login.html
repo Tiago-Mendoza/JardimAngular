@@ -2,17 +2,23 @@
     <section class="secao-login">
         <div class="conteudo">
             <div class="caixa-login">
-                <h1 class="titulo-login">Login Administrativo</h1>
-                <form class="formulario-login">
+                <h1 class="titulo-login">Login</h1>
+                <form class="formulario-login" (ngSubmit)="fazerLogin()">
                     <div class="grupo-formulario">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                        <input type="text" id="email" [(ngModel)]="email" name="email" placeholder="Digite seu e-mail" required>
                     </div>
                     <div class="grupo-formulario">
                         <label for="password">Senha</label>
-                        <input type="password" id="password" placeholder="Digite sua senha" required>
+                        <input type="password" id="password" [(ngModel)]="senha" name="senha" placeholder="Digite sua senha" required>
+                    </div>
+                    <div class="esqueci-senha">
+                        <a href="#" class="link-esqueci-senha">Esqueci minha senha</a>
                     </div>
                     <button type="submit" class="botao-login">Entrar</button>
+                    <div class="link-cadastro">
+                        <p>Não tem uma conta? <a routerLink="/cadastro" class="link-esqueci-senha">Cadastre-se</a></p>
+                    </div>
                 </form>
             </div>
         </div>
