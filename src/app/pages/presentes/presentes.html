@@ -7,8 +7,29 @@
 
 <section class="secao-produtos">
     <div class="conteudo">
-        <h2 class="titulo-principal">Nossos Presentes</h2>
+        <h2 class="titulo-principal">Todos os Presentes</h2>
         <hr class="separador-titulo">
-        <div id="grid-presentes" class="grade-produtos"></div>
+        <div class="grade-produtos">
+            @for (presente of todosPresentes(); track presente.id) {
+                <div class="card-produto">
+                    <div class="imagem-produto">
+                        <img [src]="presente.imagem" [alt]="presente.nome">
+                    </div>
+                    <div class="info-produto">
+                        <h3 class="nome-produto">{{ presente.nome }}</h3>
+                        <div class="preco-container">
+                            @if (presente.desconto) {
+                                <span class="preco-original">R$ {{ presente.precoOriginal.toFixed(2) }}</span>
+                                <span class="preco-atual">R$ {{ presente.precoAtual.toFixed(2) }}</span>
+                                <span class="desconto-badge">{{ presente.desconto }}% DE DESCONTO</span>
+                            } @else {
+                                <span class="preco-atual">R$ {{ presente.precoAtual.toFixed(2) }}</span>
+                            }
+                        </div>
+                        <button class="botao-comprar" (click)="comprar(presente)">COMPRAR &gt;</button>
+                    </div>
+                </div>
+            }
+        </div>
     </div>
 </section>

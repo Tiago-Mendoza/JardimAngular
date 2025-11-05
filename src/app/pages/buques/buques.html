@@ -7,11 +7,29 @@
 
 <section class="secao-produtos">
     <div class="conteudo">
-        <h2 class="titulo-principal">Mais Vendidos</h2>
+        <h2 class="titulo-principal">Todos os Buquês</h2>
         <hr class="separador-titulo">
-        <div id="grid-mais-vendidos-buques" class="grade-produtos"></div>
-        <h2 class="titulo-principal" style="margin-top: 40px;">Todos os Buquês</h2>
-        <hr class="separador-titulo">
-        <div id="grid-buques" class="grade-produtos"></div>
+        <div class="grade-produtos">
+            @for (buque of todosBuques(); track buque.id) {
+                <div class="card-produto">
+                    <div class="imagem-produto">
+                        <img [src]="buque.imagem" [alt]="buque.nome">
+                    </div>
+                    <div class="info-produto">
+                        <h3 class="nome-produto">{{ buque.nome }}</h3>
+                        <div class="preco-container">
+                            @if (buque.desconto) {
+                                <span class="preco-original">R$ {{ buque.precoOriginal.toFixed(2) }}</span>
+                                <span class="preco-atual">R$ {{ buque.precoAtual.toFixed(2) }}</span>
+                                <span class="desconto-badge">{{ buque.desconto }}% DE DESCONTO</span>
+                            } @else {
+                                <span class="preco-atual">R$ {{ buque.precoAtual.toFixed(2) }}</span>
+                            }
+                        </div>
+                        <button class="botao-comprar" (click)="comprar(buque)">COMPRAR &gt;</button>
+                    </div>
+                </div>
+            }
+        </div>
     </div>
 </section>

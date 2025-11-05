@@ -75,6 +75,123 @@
     margin-bottom: 40px;
 }
 
+/* Estilos dos cards de produtos */
+.card-produto {
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.imagem-produto {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: #F5F2EE;
+}
+
+.imagem-produto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-produto:hover .imagem-produto img {
+    transform: scale(1.05);
+}
+
+.badge-mais-vendido {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #FFD700;
+    color: #2C3E2D;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.info-produto {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.nome-produto {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #2C3E2D;
+    margin: 0;
+    font-weight: 600;
+}
+
+.preco-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.preco-original {
+    font-size: 0.9rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.preco-atual {
+    font-size: 1.5rem;
+    color: #C9A96E;
+    font-weight: bold;
+}
+
+.desconto-badge {
+    font-size: 0.85rem;
+    color: #FFFFFF;
+    background-color: #C7A67A;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.botao-comprar {
+    background: linear-gradient(180deg, #D2B288 0%, #BC9668 100%);
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    margin-top: auto;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.botao-comprar:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.botao-comprar:active {
+    transform: translateY(0);
+}
+
 @media (max-width: 768px) {
     .cabecalho-secao {
         padding: 100px 30px;
@@ -94,6 +211,23 @@
 
     .titulo-principal {
         font-size: 2rem;
+    }
+
+    .grade-produtos {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .imagem-produto {
+        height: 250px;
+    }
+
+    .nome-produto {
+        font-size: 1.1rem;
+    }
+
+    .preco-atual {
+        font-size: 1.3rem;
     }
 }
 

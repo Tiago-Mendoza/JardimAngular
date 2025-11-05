@@ -7,8 +7,29 @@
 
 <section class="secao-produtos">
     <div class="conteudo">
-        <h2 class="titulo-principal">Nossos Arranjos</h2>
+        <h2 class="titulo-principal">Todos os Arranjos</h2>
         <hr class="separador-titulo">
-        <div id="grid-arranjos" class="grade-produtos"></div>
+        <div class="grade-produtos">
+            @for (arranjo of todosArranjos(); track arranjo.id) {
+                <div class="card-produto">
+                    <div class="imagem-produto">
+                        <img [src]="arranjo.imagem" [alt]="arranjo.nome">
+                    </div>
+                    <div class="info-produto">
+                        <h3 class="nome-produto">{{ arranjo.nome }}</h3>
+                        <div class="preco-container">
+                            @if (arranjo.desconto) {
+                                <span class="preco-original">R$ {{ arranjo.precoOriginal.toFixed(2) }}</span>
+                                <span class="preco-atual">R$ {{ arranjo.precoAtual.toFixed(2) }}</span>
+                                <span class="desconto-badge">{{ arranjo.desconto }}% DE DESCONTO</span>
+                            } @else {
+                                <span class="preco-atual">R$ {{ arranjo.precoAtual.toFixed(2) }}</span>
+                            }
+                        </div>
+                        <button class="botao-comprar" (click)="comprar(arranjo)">COMPRAR &gt;</button>
+                    </div>
+                </div>
+            }
+        </div>
     </div>
 </section>
