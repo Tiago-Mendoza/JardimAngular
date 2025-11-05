@@ -1,23 +1,23 @@
-<header class="main-header">
-    <nav class="navbar-elegant">
-        <a routerLink="/buques" class="nav-branding-elegant">Jardim Encantado</a>
-        <ul class="nav-menu-elegant">
-            <li class="nav-item-elegant"><a routerLink="/buques" class="nav-link-elegant">Buquês</a></li>
-            <li class="nav-item-elegant"><a routerLink="/arranjos" class="nav-link-elegant">Arranjos</a></li>
-            <li class="nav-item-elegant"><a routerLink="/presentes" class="nav-link-elegant">Presentes</a></li>
-            <li class="nav-item-elegant"><a href="#contato-footer" class="nav-link-elegant">Contato</a></li>
-            <li class="nav-item-elegant"><a routerLink="/admin-login" class="nav-link-elegant">Login</a></li>
-            <li class="nav-item-elegant">
-                <a routerLink="/cart" class="nav-link-elegant">
+<header class="cabecalho-principal">
+    <nav class="navegacao">
+        <a routerLink="/buques" class="logo-navegacao">Jardim Encantado</a>
+        <ul class="menu-navegacao">
+            <li class="item-menu"><a routerLink="/buques" class="link-menu">Buquês</a></li>
+            <li class="item-menu"><a routerLink="/arranjos" class="link-menu">Arranjos</a></li>
+            <li class="item-menu"><a routerLink="/presentes" class="link-menu">Presentes</a></li>
+            <li class="item-menu"><a href="#contato-footer" class="link-menu">Contato</a></li>
+            <li class="item-menu"><a routerLink="/admin-login" class="link-menu">Login</a></li>
+            <li class="item-menu">
+                <a routerLink="/cart" class="link-menu">
                     <i class="fa-solid fa-cart-shopping"></i> 
                     <span id="cart-count">{{ cartCount() }}</span>
                 </a>
             </li>
         </ul>
-        <div class="hamburger-elegant">
-            <span class="bar-elegant"></span>
-            <span class="bar-elegant"></span>
-            <span class="bar-elegant"></span>
+        <div class="hamburguer">
+            <span class="barra-hamburguer"></span>
+            <span class="barra-hamburguer"></span>
+            <span class="barra-hamburguer"></span>
         </div>
     </nav>
 </header>

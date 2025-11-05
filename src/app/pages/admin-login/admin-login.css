@@ -1,70 +1,70 @@
-.login-section {
+.secao-login {
     min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 50px 0;
-    background: linear-gradient(135deg, var(--neutral-cream) 0%, var(--neutral-warm) 100%);
+    background: linear-gradient(135deg, #FAF8F5 0%, #F5F2EE 100%);
 }
 
-.container {
+.conteudo {
     max-width: 500px;
     margin: 0 auto;
     padding: 0 30px;
     width: 100%;
 }
 
-.login-box {
-    background: var(--white-soft);
+.caixa-login {
+    background: #FEFEFE;
     padding: 50px;
     border-radius: 12px;
-    box-shadow: 0 8px 25px var(--shadow-medium);
+    box-shadow: 0 8px 25px rgba(139, 154, 140, 0.25);
 }
 
-.login-title {
+.titulo-login {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
-    color: var(--text-primary);
+    color: #2C3E2D;
     text-align: center;
     margin-bottom: 40px;
 }
 
-.login-form {
+.formulario-login {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.form-group {
+.grupo-formulario {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.form-group label {
-    color: var(--text-primary);
+.grupo-formulario label {
+    color: #2C3E2D;
     font-weight: 600;
     font-size: 0.95rem;
 }
 
-.form-group input {
+.grupo-formulario input {
     padding: 15px 18px;
-    border: 2px solid var(--neutral-soft);
+    border: 2px solid #E8E4DF;
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.3s ease;
-    background: var(--neutral-cream);
+    background: #FAF8F5;
 }
 
-.form-group input:focus {
+.grupo-formulario input:focus {
     outline: none;
-    border-color: var(--accent-rose);
-    background: var(--white-soft);
+    border-color: #D4A574;
+    background: #FEFEFE;
 }
 
-.btn-login {
-    background: linear-gradient(135deg, var(--accent-rose) 0%, var(--accent-gold) 100%);
-    color: var(--white-soft);
+.botao-login {
+    background: linear-gradient(135deg, #D4A574 0%, #C9A96E 100%);
+    color: #FEFEFE;
     border: none;
     padding: 15px 30px;
     font-size: 1.1rem;
@@ -77,18 +77,18 @@
     margin-top: 10px;
 }
 
-.btn-login:hover {
-    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-rose) 100%);
+.botao-login:hover {
+    background: linear-gradient(135deg, #C9A96E 0%, #D4A574 100%);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(212, 165, 116, 0.3);
 }
 
 @media (max-width: 768px) {
-    .login-box {
+    .caixa-login {
         padding: 30px;
     }
 
-    .login-title {
+    .titulo-login {
         font-size: 2rem;
     }
 }

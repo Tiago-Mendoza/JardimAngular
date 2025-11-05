@@ -1,42 +1,42 @@
-.cart-section {
+.secao-carrinho {
     min-height: 60vh;
     padding: 80px 0;
-    background: var(--neutral-warm);
+    background: #F5F2EE;
 }
 
-.container {
+.conteudo {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 50px;
 }
 
-.page-title {
+.titulo-pagina {
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
-    color: var(--text-primary);
+    color: #2C3E2D;
     text-align: center;
     margin-bottom: 50px;
 }
 
-.cart-content {
+.conteudo-carrinho {
     text-align: center;
     padding: 50px;
-    background: var(--white-soft);
+    background: #FEFEFE;
     border-radius: 12px;
-    box-shadow: 0 4px 15px var(--shadow-soft);
+    box-shadow: 0 4px 15px rgba(139, 154, 140, 0.15);
 }
 
-.cart-content p {
+.conteudo-carrinho p {
     font-size: 1.2rem;
-    color: var(--text-secondary);
+    color: #5A6B5B;
 }
 
 @media (max-width: 768px) {
-    .container {
+    .conteudo {
         padding: 0 30px;
     }
 
-    .page-title {
+    .titulo-pagina {
         font-size: 2rem;
     }
 }

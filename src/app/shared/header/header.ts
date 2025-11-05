@@ -18,8 +18,8 @@ export class Header implements OnInit {
   }
 
   setupMobileMenu() {
-    const hamburger = document.querySelector('.hamburger-elegant');
-    const navMenu = document.querySelector('.nav-menu-elegant');
+    const hamburger = document.querySelector('.hamburguer');
+    const navMenu = document.querySelector('.menu-navegacao');
 
     hamburger?.addEventListener('click', () => {
       hamburger.classList.toggle('active');
@@ -27,7 +27,7 @@ export class Header implements OnInit {
     });
 
     // Fechar menu ao clicar em um link
-    document.querySelectorAll('.nav-link-elegant').forEach(n => {
+    document.querySelectorAll('.link-menu').forEach(n => {
       n.addEventListener('click', () => {
         hamburger?.classList.remove('active');
         navMenu?.classList.remove('active');

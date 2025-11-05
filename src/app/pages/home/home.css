@@ -1,4 +1,4 @@
-.hero-section {
+.cabecalho-secao {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -7,7 +7,7 @@
     position: relative;
 }
 
-.hero-section::before {
+.cabecalho-secao::before {
     content: '';
     position: absolute;
     top: 0;
@@ -17,53 +17,53 @@
     background: linear-gradient(135deg, rgba(139, 154, 140, 0.7) 0%, rgba(44, 62, 45, 0.6) 100%);
 }
 
-.section-title {
+.titulo-secao {
     font-family: 'Playfair Display', serif;
     font-size: 4rem;
-    color: var(--white-soft);
+    color: #FEFEFE;
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
-.section-subtitle {
+.subtitulo-secao {
     font-size: 1.5rem;
-    color: var(--neutral-cream);
+    color: #FAF8F5;
     position: relative;
     z-index: 1;
     font-weight: 300;
     letter-spacing: 1px;
 }
 
-.product-section {
+.secao-produtos {
     padding: 80px 0;
-    background: var(--neutral-warm);
+    background: #F5F2EE;
 }
 
-.container {
+.conteudo {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 50px;
 }
 
-.section-heading {
+.titulo-principal {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
-    color: var(--text-primary);
+    color: #2C3E2D;
     text-align: center;
     margin-bottom: 15px;
 }
 
-.heading-separator {
+.separador-titulo {
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, var(--accent-rose) 0%, var(--accent-gold) 100%);
+    background: linear-gradient(90deg, #D4A574 0%, #C9A96E 100%);
     border: none;
     margin: 0 auto 50px;
 }
 
-.product-grid {
+.grade-produtos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 30px;
@@ -71,23 +71,23 @@
 }
 
 @media (max-width: 768px) {
-    .hero-section {
+    .cabecalho-secao {
         padding: 100px 30px;
     }
 
-    .section-title {
+    .titulo-secao {
         font-size: 2.5rem;
     }
 
-    .section-subtitle {
+    .subtitulo-secao {
         font-size: 1.2rem;
     }
 
-    .container {
+    .conteudo {
         padding: 0 30px;
     }
 
-    .section-heading {
+    .titulo-principal {
         font-size: 2rem;
     }
 }
