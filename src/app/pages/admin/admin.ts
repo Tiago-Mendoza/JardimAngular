@@ -75,7 +75,7 @@ export class Admin implements OnInit {
     return `assets/img/${this.abaAtiva}/${nomeImagem}`;
   }
 
-  // Função chamada quando você clica em "Adicionar Produto"
+  // Função chama quando você clica em "Adicionar Produto"
   adicionarProduto() {
     // AQUI É ONDE A GENTE INSERE A IMAGEM!
     // Pega o nome da imagem que você digitou e monta o caminho completo

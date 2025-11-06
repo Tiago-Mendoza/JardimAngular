@@ -24,29 +24,42 @@ export class Arranjos implements OnInit {
   }
 
   carregarProdutos() {
+    // Sempre inicia com os produtos padrão
+    const produtosPadrao = this.obterProdutosPadrao();
+    
     // Verifica se há produtos salvos no localStorage
     const produtosSalvos = localStorage.getItem('produtos_arranjos');
     
-    if (produtosSalvos) {
-      const produtos = JSON.parse(produtosSalvos);
-      const arranjos: ProdutoArranjo[] = produtos.map((p: any, index: number) => ({
-        id: p.id || index + 1,
-        nome: p.nome,
-        precoOriginal: p.precoOriginal || p.preco,
-        precoAtual: p.precoAtual || p.preco,
-        desconto: p.desconto,
-        imagem: p.imagem
-      }));
-      
-      this.todosArranjos.set(arranjos);
-    } else {
-      // Inicializa com produtos padrão baseados nas imagens
-      this.inicializarProdutosPadrao();
+    if (produtosSalvos && produtosSalvos !== '[]' && produtosSalvos !== 'null') {
+      try {
+        const produtosAdicionados = JSON.parse(produtosSalvos);
+        if (Array.isArray(produtosAdicionados) && produtosAdicionados.length > 0) {
+          // Converte produtos adicionados para o formato ProdutoArranjo
+          const arranjosAdicionados: ProdutoArranjo[] = produtosAdicionados.map((p: any, index: number) => ({
+            id: p.id || Date.now() + index,
+            nome: p.nome,
+            precoOriginal: p.precoOriginal || p.preco,
+            precoAtual: p.precoAtual || p.preco,
+            desconto: p.desconto,
+            imagem: p.imagem
+          }));
+          
+          // Mescla produtos padrão com produtos adicionados
+          const todosProdutos = [...produtosPadrao, ...arranjosAdicionados];
+          this.todosArranjos.set(todosProdutos);
+          return;
+        }
+      } catch (error) {
+        console.error('Erro ao carregar produtos do localStorage:', error);
+      }
     }
+    
+    // Se não houver produtos salvos, mostra apenas os produtos padrão
+    this.todosArranjos.set(produtosPadrao);
   }
 
-  inicializarProdutosPadrao() {
-    const arranjos: ProdutoArranjo[] = [
+  obterProdutosPadrao(): ProdutoArranjo[] {
+    return [
       {
         id: 1,
         nome: 'Centro de Mesa Botânico',
@@ -125,8 +138,6 @@ export class Arranjos implements OnInit {
         imagem: 'assets/img/arranjos/arranjo-10.jpg'
       }
     ];
-
-    this.todosArranjos.set(arranjos);
   }
 
   comprar(arranjo: ProdutoArranjo) {

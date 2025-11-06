@@ -20,33 +20,47 @@ export class Buques implements OnInit {
   todosBuques = signal<ProdutoBuque[]>([]);
 
   ngOnInit() {
+    console.log('Buques component inicializado');
     this.carregarProdutos();
   }
 
   carregarProdutos() {
+    // Sempre inicia com os produtos padrão
+    const produtosPadrao = this.obterProdutosPadrao();
+    
     // Verifica se há produtos salvos no localStorage
     const produtosSalvos = localStorage.getItem('produtos_buques');
     
-    if (produtosSalvos) {
-      const produtos = JSON.parse(produtosSalvos);
-      const buques: ProdutoBuque[] = produtos.map((p: any, index: number) => ({
-        id: p.id || index + 1,
-        nome: p.nome,
-        precoOriginal: p.precoOriginal || p.preco,
-        precoAtual: p.precoAtual || p.preco,
-        desconto: p.desconto,
-        imagem: p.imagem
-      }));
-      
-      this.todosBuques.set(buques);
-    } else {
-      // Inicializa com produtos padrão baseados nas imagens
-      this.inicializarProdutosPadrao();
+    if (produtosSalvos && produtosSalvos !== '[]' && produtosSalvos !== 'null') {
+      try {
+        const produtosAdicionados = JSON.parse(produtosSalvos);
+        if (Array.isArray(produtosAdicionados) && produtosAdicionados.length > 0) {
+          // Converte produtos adicionados para o formato ProdutoBuque
+          const buquesAdicionados: ProdutoBuque[] = produtosAdicionados.map((p: any, index: number) => ({
+            id: p.id || Date.now() + index,
+            nome: p.nome,
+            precoOriginal: p.precoOriginal || p.preco,
+            precoAtual: p.precoAtual || p.preco,
+            desconto: p.desconto,
+            imagem: p.imagem
+          }));
+          
+          // Mescla produtos padrão com produtos adicionados
+          const todosProdutos = [...produtosPadrao, ...buquesAdicionados];
+          this.todosBuques.set(todosProdutos);
+          return;
+        }
+      } catch (error) {
+        console.error('Erro ao carregar produtos do localStorage:', error);
+      }
     }
+    
+    // Se não houver produtos salvos, mostra apenas os produtos padrão
+    this.todosBuques.set(produtosPadrao);
   }
 
-  inicializarProdutosPadrao() {
-    const buques: ProdutoBuque[] = [
+  obterProdutosPadrao(): ProdutoBuque[] {
+    return [
       {
         id: 1,
         nome: 'Aurora Rosé',
@@ -125,9 +139,8 @@ export class Buques implements OnInit {
         imagem: 'assets/img/buques/buque-10.jpg'
       }
     ];
-
-    this.todosBuques.set(buques);
   }
+
 
   comprar(buque: ProdutoBuque) {
     // TODO: Implementar lógica de adicionar ao carrinho
