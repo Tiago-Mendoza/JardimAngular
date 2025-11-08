@@ -13,7 +13,7 @@ import { Produto } from '../../core/services/types/types';
 })
 export class ProdutoForm {
   titulo = 'Cadastro de Produtos';
-  produtoId?: number;
+  produtoId?: string | number;
   
   // Defino um objeto produto que será incluído ou alterado
   produto: Produto = {
@@ -55,12 +55,18 @@ export class ProdutoForm {
         this.router.navigate(['/produtos']);
       });
     } else {
-      // Inclusão
+      // Inclusão - gera ID aleatório
+      this.produto.id = this.gerarIdAleatorio();
       this.service.incluir(this.produto).subscribe(() => {
         alert('Produto cadastrado com sucesso!');
         this.router.navigate(['/produtos']);
       });
     }
+  }
+
+  // Gera um ID aleatório de 4 caracteres hexadecimais
+  gerarIdAleatorio(): string {
+    return Math.random().toString(16).substring(2, 6);
   }
 
   cancelar() {

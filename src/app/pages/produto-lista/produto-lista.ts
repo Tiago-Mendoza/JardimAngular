@@ -35,13 +35,13 @@ export class ProdutoLista implements OnInit {
     });
   }
 
-  editar(id: number | undefined): void {
+  editar(id: string | number | undefined): void {
     if (id) {
       this.router.navigate(['/produto-form', id]);
     }
   }
 
-  excluir(id: number | undefined): void {
+  excluir(id: string | number | undefined): void {
     if (id && confirm('Deseja realmente excluir este produto?')) {
       this.service.excluir(id).subscribe(() => {
         this.carregarProdutos();

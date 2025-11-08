@@ -1,6 +1,6 @@
 // Interface que define a estrutura de um Produto
 export interface Produto {
-  id?: number;
+  id?: string | number;
   nome: string;
   preco: number;
   descricao: string;

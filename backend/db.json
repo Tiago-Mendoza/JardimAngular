@@ -25,12 +25,20 @@
       "categoria": "buques"
     },
     {
-      "id": 15,
+      "id": "15",
       "nome": "margarita",
       "preco": 12,
       "descricao": "",
       "imagem": "assets/img/buque/buques-12.jpg",
       "categoria": "buques"
+    },
+    {
+      "id": "1204",
+      "nome": "urso",
+      "preco": 12,
+      "descricao": "urso e bombom",
+      "imagem": "assets/img/presentes/presente-23.jpg",
+      "categoria": "presentes"
     }
   ],
   "clientes": [

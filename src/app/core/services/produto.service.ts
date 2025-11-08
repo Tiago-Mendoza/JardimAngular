@@ -18,7 +18,7 @@ export class ProdutoService {
   }
 
   // Busca um produto por ID
-  buscarPorId(id: number): Observable<Produto> {
+  buscarPorId(id: string | number): Observable<Produto> {
     return this.http.get<Produto>(`${this.apiUrl}/${id}`);
   }
 
@@ -33,7 +33,7 @@ export class ProdutoService {
   }
 
   // Exclui um produto
-  excluir(id: number): Observable<void> {
+  excluir(id: string | number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }
