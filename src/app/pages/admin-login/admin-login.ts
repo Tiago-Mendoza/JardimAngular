@@ -21,7 +21,7 @@ export class AdminLogin {
   fazerLogin() {
     // Tenta fazer login como admin
     if (this.pessoaService.loginAdmin(this.email, this.senha)) {
-      this.router.navigate(['/admin']);
+      this.router.navigate(['/produtos']);
       return;
     }
 

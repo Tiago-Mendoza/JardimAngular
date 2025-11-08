@@ -1,41 +1,49 @@
 {
   "produtos": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Buque de Rosas Vermelhas",
-      "preco": 89.90,
+      "preco": 89.9,
       "descricao": "Buque lindo com 12 rosas vermelhas, perfeito pra declarar amor hehe",
       "imagem": "assets/img/buques/Buque-01.jpg",
       "categoria": "buques"
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Arranjo de Girasol",
-      "preco": 75.00,
+      "preco": 75,
       "descricao": "Arranjo bem colorido com girasóis, deixa qualquer ambiente mais alegre",
       "imagem": "assets/img/arranjos/arranjo-01.jpg",
       "categoria": "arranjos"
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Cesta de Presentes",
-      "preco": 120.50,
+      "preco": 120.5,
       "descricao": "Cesta completa com chocolates e outras coisinhas gostosas",
       "imagem": "assets/img/presentes/presente-01.jpg",
       "categoria": "presentes"
     },
     {
-      "id": 4,
+      "id": "4",
       "nome": "Buque Mix",
-      "preco": 95.00,
+      "preco": 95,
       "descricao": "Mix de flores variadas, bem colorido mesmo",
       "imagem": "assets/img/buques/buque-02.jpg",
+      "categoria": "buques"
+    },
+    {
+      "id": "fb38",
+      "nome": "margarita",
+      "preco": 15,
+      "descricao": "margaritas",
+      "imagem": "assets/img/buque/buques-12.jpg",
       "categoria": "buques"
     }
   ],
   "clientes": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "João Silva",
       "email": "joao@email.com",
       "senha": "123456",
@@ -44,7 +52,7 @@
       "cadastradoEm": "2024-01-15T10:30:00Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Maria Santos",
       "email": "maria@email.com",
       "senha": "senha123",
@@ -55,23 +63,23 @@
   ],
   "pedidos": [
     {
-      "id": 1,
+      "id": "1",
       "clienteId": 1,
       "produtos": [
         {
           "produtoId": 1,
           "quantidade": 2,
-          "preco": 89.90
+          "preco": 89.9
         }
       ],
-      "total": 179.80,
+      "total": 179.8,
       "status": "pendente",
       "dataPedido": "2024-03-10T09:00:00Z"
     }
   ],
   "admins": [
     {
-      "id": 1,
+      "id": "1",
       "email": "admin",
       "senha": "123456",
       "nome": "Administrador"

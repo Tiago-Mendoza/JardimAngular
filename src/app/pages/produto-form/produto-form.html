@@ -1,0 +1,51 @@
+<div class="content-container">
+
+    <div class="cabecalho">
+        <h1>{{ titulo }}</h1>
+        <button class="btn-voltar" type="button" (click)="cancelar()">← Voltar</button>
+    </div>
+
+    <form>
+
+        @if (produtoId) {
+            <label for="input-id">ID</label><br>
+            <input class="input-id" id="input-id" name="input-id" type="text" [(ngModel)]="produto.id" disabled/>
+        }
+
+        <label for="input-nome">Nome do Produto</label><br>
+        <input class="input-simples" id="input-nome" name="input-nome" placeholder="Digite o nome do produto"
+            type="text" [(ngModel)]="produto.nome" required/>
+
+        <label for="input-preco">Preço (R$)</label><br>
+        <input class="input-simples" id="input-preco" name="input-preco" placeholder="Digite o preço"
+            type="number" step="0.01" [(ngModel)]="produto.preco" required/>
+
+        <label for="input-descricao">Descrição</label><br>
+        <textarea class="input-textarea" id="input-descricao" name="input-descricao" 
+            placeholder="Digite a descrição do produto" [(ngModel)]="produto.descricao" required></textarea>
+
+        <label for="input-imagem">Caminho da Imagem</label><br>
+        <input class="input-simples" id="input-imagem" name="input-imagem" 
+            placeholder="Ex: assets/img/buques/buque-01.jpg"
+            type="text" [(ngModel)]="produto.imagem" required/>
+
+        <label for="input-categoria">Categoria</label><br>
+        <select class="input-simples" id="input-categoria" name="input-categoria" [(ngModel)]="produto.categoria" required>
+            <option value="buques">Buquês</option>
+            <option value="arranjos">Arranjos</option>
+            <option value="presentes">Presentes</option>
+        </select>
+
+        <div class="botoes">
+            <button class="input-submeter" type="button" (click)="submeter()">
+                Cadastrar
+            </button>
+            <button class="input-cancelar" type="button" (click)="cancelar()">
+                Cancelar
+            </button>
+        </div>
+
+    </form>
+
+</div>
+

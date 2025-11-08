@@ -7,6 +7,8 @@ import { Cart } from './pages/cart/cart';
 import { AdminLogin } from './pages/admin-login/admin-login';
 import { Cadastro } from './pages/cadastro/cadastro';
 import { Admin } from './pages/admin/admin';
+import { ProdutoLista } from './pages/produto-lista/produto-lista';
+import { ProdutoForm } from './pages/produto-form/produto-form';
 
 export const routes: Routes = [
   {
@@ -53,6 +55,21 @@ export const routes: Routes = [
     path: 'admin',
     component: Admin,
     title: 'Painel Administrativo - Jardim Encantado'
+  },
+  {
+    path: 'produtos',
+    component: ProdutoLista,
+    title: 'Gerenciamento de Produtos - Jardim Encantado'
+  },
+  {
+    path: 'produto-form',
+    component: ProdutoForm,
+    title: 'Cadastro de Produto - Jardim Encantado'
+  },
+  {
+    path: 'produto-form/:id',
+    component: ProdutoForm,
+    title: 'Edição de Produto - Jardim Encantado'
   },
   {
     path: '**',
