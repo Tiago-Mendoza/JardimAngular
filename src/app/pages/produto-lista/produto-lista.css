@@ -43,7 +43,7 @@ h1 {
 }
 
 .tabela-produtos thead {
-    background-color: #007bff;
+    background: linear-gradient(135deg, #8B9A8C 0%, #6B7A6C 100%);
     color: white;
 }
 
@@ -104,7 +104,7 @@ h1 {
 }
 
 .btn-incluir {
-    background-color: #007bff;
+    background: linear-gradient(135deg, #8B9A8C 0%, #6B7A6C 100%);
     color: white;
     border: none;
     padding: 12px 30px;
@@ -114,12 +114,14 @@ h1 {
     font-weight: bold;
     display: block;
     margin: 0 auto;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
     width: 100%;
 }
 
 .btn-incluir:hover {
-    background-color: #0056b3;
+    background: linear-gradient(135deg, #6B7A6C 0%, #5A6A5B 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 122, 108, 0.3);
 }
 
 /* Responsividade para telas menores */

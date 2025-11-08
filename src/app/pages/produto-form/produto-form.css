@@ -70,7 +70,7 @@ label {
 
 .input-simples:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #8B9A8C;
 }
 
 .input-textarea {
@@ -87,7 +87,7 @@ label {
 
 .input-textarea:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #8B9A8C;
 }
 
 .botoes {
@@ -101,16 +101,18 @@ label {
     padding: 12px;
     font-size: 1rem;
     font-weight: bold;
-    background-color: #28a745;
+    background: linear-gradient(135deg, #8B9A8C 0%, #6B7A6C 100%);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
 }
 
 .input-submeter:hover {
-    background-color: #218838;
+    background: linear-gradient(135deg, #6B7A6C 0%, #5A6A5B 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 122, 108, 0.3);
 }
 
 .input-cancelar {
