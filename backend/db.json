@@ -9,22 +9,6 @@
       "categoria": "buques"
     },
     {
-      "id": "2",
-      "nome": "Arranjo de Girasol",
-      "preco": 75,
-      "descricao": "Arranjo bem colorido com girasóis, deixa qualquer ambiente mais alegre",
-      "imagem": "assets/img/arranjos/arranjo-01.jpg",
-      "categoria": "arranjos"
-    },
-    {
-      "id": "3",
-      "nome": "Cesta de Presentes",
-      "preco": 120.5,
-      "descricao": "Cesta completa com chocolates e outras coisinhas gostosas",
-      "imagem": "assets/img/presentes/presente-01.jpg",
-      "categoria": "presentes"
-    },
-    {
       "id": "4",
       "nome": "Buque Mix",
       "preco": 95,
@@ -37,6 +21,14 @@
       "nome": "margarita",
       "preco": 15,
       "descricao": "margaritas",
+      "imagem": "assets/img/buque/buques-12.jpg",
+      "categoria": "buques"
+    },
+    {
+      "id": 15,
+      "nome": "margarita",
+      "preco": 12,
+      "descricao": "",
       "imagem": "assets/img/buque/buques-12.jpg",
       "categoria": "buques"
     }

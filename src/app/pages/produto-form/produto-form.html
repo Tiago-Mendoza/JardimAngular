@@ -7,10 +7,8 @@
 
     <form>
 
-        @if (produtoId) {
-            <label for="input-id">ID</label><br>
-            <input class="input-id" id="input-id" name="input-id" type="text" [(ngModel)]="produto.id" disabled/>
-        }
+        <label for="input-id">ID</label><br>
+        <input class="input-simples" id="input-id" name="input-id" placeholder="Digite o ID do produto" type="number" [(ngModel)]="produto.id"/>
 
         <label for="input-nome">Nome do Produto</label><br>
         <input class="input-simples" id="input-nome" name="input-nome" placeholder="Digite o nome do produto"
