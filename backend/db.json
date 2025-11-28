@@ -1,35 +1,11 @@
 {
   "produtos": [
     {
-      "id": "1",
-      "nome": "Buque de Rosas Vermelhas",
-      "preco": 89.9,
-      "descricao": "Buque lindo com 12 rosas vermelhas, perfeito pra declarar amor hehe",
-      "imagem": "assets/img/buques/Buque-01.jpg",
-      "categoria": "buques"
-    },
-    {
       "id": "4",
       "nome": "Buque Mix",
       "preco": 95,
       "descricao": "Mix de flores variadas, bem colorido mesmo",
       "imagem": "assets/img/buques/buque-02.jpg",
-      "categoria": "buques"
-    },
-    {
-      "id": "fb38",
-      "nome": "margarita",
-      "preco": 15,
-      "descricao": "margaritas",
-      "imagem": "assets/img/buque/buques-12.jpg",
-      "categoria": "buques"
-    },
-    {
-      "id": "15",
-      "nome": "margarita",
-      "preco": 12,
-      "descricao": "",
-      "imagem": "assets/img/buque/buques-12.jpg",
       "categoria": "buques"
     },
     {
@@ -39,6 +15,14 @@
       "descricao": "urso e bombom",
       "imagem": "assets/img/presentes/presente-23.jpg",
       "categoria": "presentes"
+    },
+    {
+      "id": "dde4",
+      "nome": "margarita",
+      "preco": 15,
+      "descricao": "",
+      "imagem": "assets/img/buques/buque-12.jpg",
+      "categoria": "buques"
     }
   ],
   "clientes": [

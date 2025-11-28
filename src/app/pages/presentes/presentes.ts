@@ -1,8 +1,9 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProdutoService } from '../../core/services/produto.service';
 
 interface ProdutoPresente {
-  id: number;
+  id: number | string;
   nome: string;
   precoOriginal: number;
   precoAtual: number;
@@ -17,6 +18,7 @@ interface ProdutoPresente {
   styleUrl: './presentes.css',
 })
 export class Presentes implements OnInit {
+  private produtoService = inject(ProdutoService);
   todosPresentes = signal<ProdutoPresente[]>([]);
 
   ngOnInit() {
@@ -24,38 +26,26 @@ export class Presentes implements OnInit {
   }
 
   carregarProdutos() {
-    // Sempre inicia com os produtos padrão
     const produtosPadrao = this.obterProdutosPadrao();
     
-    // Verifica se há produtos salvos no localStorage
-    const produtosSalvos = localStorage.getItem('produtos_presentes');
-    
-    if (produtosSalvos && produtosSalvos !== '[]' && produtosSalvos !== 'null') {
-      try {
-        const produtosAdicionados = JSON.parse(produtosSalvos);
-        if (Array.isArray(produtosAdicionados) && produtosAdicionados.length > 0) {
-          // Converte produtos adicionados para o formato ProdutoPresente
-          const presentesAdicionados: ProdutoPresente[] = produtosAdicionados.map((p: any, index: number) => ({
-            id: p.id || Date.now() + index,
+    this.produtoService.listar().subscribe({
+      next: (produtos) => {
+        const presentesBackend = produtos
+          .filter(p => p.categoria === 'presentes')
+          .map(p => ({
+            id: p.id || 0,
             nome: p.nome,
-            precoOriginal: p.precoOriginal || p.preco,
-            precoAtual: p.precoAtual || p.preco,
-            desconto: p.desconto,
+            precoOriginal: p.preco,
+            precoAtual: p.preco,
             imagem: p.imagem
           }));
-          
-          // Mescla produtos padrão com produtos adicionados
-          const todosProdutos = [...produtosPadrao, ...presentesAdicionados];
-          this.todosPresentes.set(todosProdutos);
-          return;
-        }
-      } catch (error) {
-        console.error('Erro ao carregar produtos do localStorage:', error);
+        
+        this.todosPresentes.set([...produtosPadrao, ...presentesBackend]);
+      },
+      error: () => {
+        this.todosPresentes.set(produtosPadrao);
       }
-    }
-    
-    // Se não houver produtos salvos, mostra apenas os produtos padrão
-    this.todosPresentes.set(produtosPadrao);
+    });
   }
 
   obterProdutosPadrao(): ProdutoPresente[] {
