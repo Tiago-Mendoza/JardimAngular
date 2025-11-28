@@ -9,20 +9,20 @@
       "categoria": "buques"
     },
     {
-      "id": "1204",
-      "nome": "urso",
-      "preco": 12,
-      "descricao": "urso e bombom",
-      "imagem": "assets/img/presentes/presente-23.jpg",
-      "categoria": "presentes"
-    },
-    {
       "id": "dde4",
       "nome": "margarita",
       "preco": 15,
       "descricao": "",
       "imagem": "assets/img/buques/buque-12.jpg",
       "categoria": "buques"
+    },
+    {
+      "id": "815d",
+      "nome": "cesta kitkat",
+      "preco": 12,
+      "descricao": "Cesta de kitkat",
+      "imagem": "assets/img/presentes/presente-12.jpg",
+      "categoria": "presentes"
     }
   ],
   "clientes": [

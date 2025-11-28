@@ -6,7 +6,6 @@ import { Presentes } from './pages/presentes/presentes';
 import { Cart } from './pages/cart/cart';
 import { AdminLogin } from './pages/admin-login/admin-login';
 import { Cadastro } from './pages/cadastro/cadastro';
-import { Admin } from './pages/admin/admin';
 import { ProdutoLista } from './pages/produto-lista/produto-lista';
 import { ProdutoForm } from './pages/produto-form/produto-form';
 
@@ -50,11 +49,6 @@ export const routes: Routes = [
     path: 'cadastro',
     component: Cadastro,
     title: 'Cadastro - Jardim Encantado'
-  },
-  {
-    path: 'admin',
-    component: Admin,
-    title: 'Painel Administrativo - Jardim Encantado'
   },
   {
     path: 'produtos',
