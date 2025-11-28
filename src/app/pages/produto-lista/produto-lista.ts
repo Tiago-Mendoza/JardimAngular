@@ -21,7 +21,6 @@ export class ProdutoLista implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Verifica se o admin está logado
     if (!localStorage.getItem('adminLogado')) {
       this.router.navigate(['/admin-login']);
       return;
@@ -58,4 +57,3 @@ export class ProdutoLista implements OnInit {
     this.router.navigate(['/admin-login']);
   }
 }
-

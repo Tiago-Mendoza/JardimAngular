@@ -131,7 +131,6 @@ export class Presentes implements OnInit {
   }
 
   comprar(presente: ProdutoPresente) {
-    // TODO: Implementar lógica de adicionar ao carrinho
     console.log('Comprar:', presente);
   }
 }

@@ -19,19 +19,16 @@ export class AdminLogin {
   ) {}
 
   fazerLogin() {
-    // Tenta fazer login como admin
     if (this.pessoaService.loginAdmin(this.email, this.senha)) {
       this.router.navigate(['/produtos']);
       return;
     }
 
-    // Tenta fazer login como cliente
     if (this.pessoaService.loginCliente(this.email, this.senha)) {
       this.router.navigate(['/home']);
       return;
     }
 
-    // Se não conseguiu fazer login
     alert('E-mail ou senha incorretos!');
   }
 }

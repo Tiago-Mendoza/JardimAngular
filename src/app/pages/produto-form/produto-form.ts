@@ -15,7 +15,6 @@ export class ProdutoForm {
   titulo = 'Cadastro de Produtos';
   produtoId?: string | number;
   
-  // Defino um objeto produto que será incluído ou alterado
   produto: Produto = {
     nome: '',
     preco: 0,
@@ -29,13 +28,11 @@ export class ProdutoForm {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    // Verifica se o admin está logado
     if (!localStorage.getItem('adminLogado')) {
       this.router.navigate(['/admin-login']);
       return;
     }
 
-    // Verifico se é alteração ou inclusão
     this.produtoId = Number(this.route.snapshot.params['id']);
     if (this.produtoId) {
       this.titulo = 'Edição de Produto';
@@ -49,13 +46,11 @@ export class ProdutoForm {
 
   submeter() {
     if (this.produtoId) {
-      // Edição
       this.service.editar(this.produto).subscribe(() => {
         alert('Produto editado com sucesso!');
         this.router.navigate(['/produtos']);
       });
     } else {
-      // Inclusão - gera ID aleatório
       this.produto.id = this.gerarIdAleatorio();
       this.service.incluir(this.produto).subscribe(() => {
         alert('Produto cadastrado com sucesso!');
@@ -64,7 +59,6 @@ export class ProdutoForm {
     }
   }
 
-  // Gera um ID aleatório de 4 caracteres hexadecimais
   gerarIdAleatorio(): string {
     return Math.random().toString(16).substring(2, 6);
   }
@@ -73,4 +67,3 @@ export class ProdutoForm {
     this.router.navigate(['/produtos']);
   }
 }
-

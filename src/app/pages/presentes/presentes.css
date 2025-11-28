@@ -1,19 +1,14 @@
-/* Essa é a classe geral do cabeçalho - ela define como a imagem vai aparecer */
 .cabecalho-secao {
-    background-size: cover; /* A imagem vai cobrir toda a área, tipo um zoom */
-    background-position: center; /* A imagem fica centralizada */
-    background-repeat: no-repeat; /* Não repete a imagem, só mostra uma vez */
-    padding: 150px 50px; /* Espaçamento interno pra não grudar nas bordas */
-    text-align: center; /* Centraliza o texto */
-    position: relative; /* Precisa disso pra poder sobrepor coisas depois */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 150px 50px;
+    text-align: center;
+    position: relative;
 }
 
-/* Aqui é onde coloca a imagem de fundo específica do presente */
-/* A classe .presente vem do HTML quando você faz class="cabecalho-secao presente" */
-/* A imagem tá na pasta assets/img/fotoTopo/presente.jpg */
-/* O caminho precisa começar com /assets porque no Angular é assim que funciona */
 .cabecalho-secao.presente {
-    background-image: url('/assets/img/fotoTopo/presente.jpg'); /* Caminho da imagem de fundo - começa com / pra ser absoluto */
+    background-image: url('/assets/img/fotoTopo/presente.jpg');
 }
 
 .cabecalho-secao::before {
@@ -79,7 +74,6 @@
     margin-bottom: 40px;
 }
 
-/* Estilos dos cards de produtos */
 .card-produto {
     background: #FFFFFF;
     border-radius: 12px;
@@ -220,4 +214,3 @@
         font-size: 1.3rem;
     }
 }
-

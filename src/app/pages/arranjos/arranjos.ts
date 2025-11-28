@@ -131,7 +131,6 @@ export class Arranjos implements OnInit {
   }
 
   comprar(arranjo: ProdutoArranjo) {
-    // TODO: Implementar lógica de adicionar ao carrinho
     console.log('Comprar:', arranjo);
   }
 }

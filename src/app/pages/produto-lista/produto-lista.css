@@ -124,7 +124,6 @@ h1 {
     box-shadow: 0 4px 12px rgba(107, 122, 108, 0.3);
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 768px) {
     .tabela-produtos {
         font-size: 0.85rem;
@@ -145,4 +144,3 @@ h1 {
         width: 100%;
     }
 }
-

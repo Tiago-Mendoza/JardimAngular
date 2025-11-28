@@ -122,7 +122,6 @@ label {
     background-color: #5a6268;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .content-container {
         margin: 20px;
@@ -137,4 +136,3 @@ label {
         flex-direction: column;
     }
 }
-

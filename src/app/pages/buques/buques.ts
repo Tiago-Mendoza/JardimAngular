@@ -132,7 +132,6 @@ export class Buques implements OnInit {
 
 
   comprar(buque: ProdutoBuque) {
-    // TODO: Implementar lógica de adicionar ao carrinho
     console.log('Comprar:', buque);
   }
 }

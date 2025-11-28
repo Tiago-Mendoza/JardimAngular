@@ -11,7 +11,6 @@ export class Header implements OnInit {
   cartCount = signal(0);
 
   ngOnInit() {
-    // Configuração do menu mobile
     if (typeof window !== 'undefined') {
       this.setupMobileMenu();
     }
@@ -26,7 +25,6 @@ export class Header implements OnInit {
       navMenu?.classList.toggle('active');
     });
 
-    // Fechar menu ao clicar em um link
     document.querySelectorAll('.link-menu').forEach(n => {
       n.addEventListener('click', () => {
         hamburger?.classList.remove('active');
